@@ -4,16 +4,15 @@ RUN   apk --no-cache upgrade && \
       apk --no-cache add \
         git \
         cmake \
-        libuv-dev \
         build-base \
-        openssl-dev \
         libmicrohttpd-dev && \
       git clone https://github.com/xmrig/xmrig && \
       cd xmrig && \
-      git checkout v6.7.1 && \
-      mkdir build && \
-      cmake -DWITH_HWLOC=OFF -DCMAKE_BUILD_TYPE=Release . && \
-      make && \
+      git checkout v6.7.2 && \
+      mkdir build && cd scripts && \
+      ./build_deps.sh && cd ../build && \
+      cmake .. -DXMRIG_DEPS=scripts/deps -DCMAKE_BUILD_TYPE=Release && \
+      make -j$(nproc) && \
       apk del \
         build-base \
         cmake \
