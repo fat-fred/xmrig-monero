@@ -1,7 +1,7 @@
 {
   "api": {
     "id": null,
-    "worker-id": null
+    "worker-id": "${HOSTNAME}"
   },
   "http": {
     "enabled": true,
@@ -52,9 +52,9 @@
   "pools": [
     {
       "algo": null,
-      "coin": null,
-      "url": "pool.hashvault.pro:443",
-      "user": "4AEGLF3WuPx5EqNbxEB9FW9uFEHNecCKmJuwvGZSo3qJ7Nr9gDQ3s3ciSs42XoFz59ifBmJHLPmd1cisepaSofuSHiJE4gR",
+      "coin": "monero",
+      "url": "fatfred.net:4242",
+      "user": "44PF9gyCAjyjXFpHSAqbcDQzyDVzwQ62jVz57hRbT7PqPz6KAroXjFB7qofoEmiV1G8UCFc9Vpb1Mg5RFb3JMQNr83Af2sL",
       "pass": "docker",
       "rig-id": null,
       "nicehash": false,
